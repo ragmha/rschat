@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 
-import { meowSagas } from './meow';
+import { chatSagas } from './chat';
 
 export default function* root() {
-  // yield all([...meowSagas]);
+  yield all([...chatSagas]);
 }

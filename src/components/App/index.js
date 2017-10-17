@@ -1,17 +1,52 @@
-import React from 'react';
-import './index.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <h1> 🦄 </h1>
-      <h1>redux-saga-starter</h1>
-    </div>
-    <p>
-      Edit <strong> src/components/App </strong>
-      to get started...🚀
-    </p>
-  </div>
-);
+import Home from '../Home';
+import Room from '../Room';
 
-export default App;
+import { logout } from '../../actions';
+
+class App extends Component {
+  handleLogout = () => {
+    this.props.dispatch(logout());
+  };
+
+  render() {
+    const { username, connecting } = this.props;
+    let body, right;
+
+    if (username) {
+      if (connecting) {
+        body = (
+          <div style={{ display: 'flex' }}>
+            <div style={{ flex: 1 }} />
+            <div>Connecting.....</div>
+            <div style={{ flex: 1 }} />
+          </div>
+        );
+      } else {
+        body = <Room />;
+      }
+      right = (
+        <button name="logout" onClick={this.handleLogout}>
+          Logout
+        </button>
+      );
+    } else {
+      body = <Home />;
+    }
+
+    return (
+      <div>
+        <div>{right}</div>
+        {body}
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = ({ app }) => ({
+  ...app,
+});
+
+export default connect(mapStateToProps)(App);

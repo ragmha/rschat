@@ -1,8 +1,12 @@
 import { NEW_MESSAGE } from '../actions';
 
 const initalState = {
-  list: [],
-  entities: {},
+  list: ['a'],
+  entities: {
+    id: 0,
+    text: 'sup!',
+    username: 'a',
+  },
 };
 
 export default (state = initalState, action) => {

@@ -7,14 +7,18 @@ const PORT = 3003;
 
 io.attach(app);
 
+app.use(async ctx => {
+  ctx.body = 'Server is Up!';
+});
+
 let usernames = [];
 let messages = [];
 
-io.on('connection', async ctx => {
+io.on('connection', ctx => {
   console.log('[😎‍ Server] connected');
 });
 
-io.on('disconnect', async ctx => {
+io.on('disconnect', ctx => {
   const { username } = ctx.socket;
   if (username) {
     console.log(`[😭 Server] disconnected: ${username}`);
@@ -27,7 +31,7 @@ io.on('login', (ctx, { username }) => {
   usernames.push(username);
   ctx.socket.username = username;
 
-  io.broadcast('users.Login', { username });
+  io.broadcast('users.login', { username });
 });
 
 io.on('logout', ctx => {
@@ -38,7 +42,7 @@ io.on('logout', ctx => {
     delete ctx.socket['username'];
   }
 
-  io.broadcast('users.Logout', { username });
+  io.broadcast('users.logout', { username });
 });
 
 io.on('messsage', (ctx, { text }) => {
