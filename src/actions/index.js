@@ -19,5 +19,5 @@ export const removeUser = ({ username }) => ({ type: REMOVE_USER, username });
 // MESSAGE
 export const NEW_MESSAGE = 'NEW_MESSAGE';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
-export const newMessage = message => ({ type: NEW_MESSAGE, message });
+export const newMessage = ({ message }) => ({ type: NEW_MESSAGE, message });
 export const sendMessage = message => ({ type: SEND_MESSAGE, message });

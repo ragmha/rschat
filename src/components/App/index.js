@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Home from '../Home';
+import Login from '../Login';
 import Room from '../Room';
 
 import { logout } from '../../actions';
@@ -12,36 +12,13 @@ class App extends Component {
   };
 
   render() {
-    const { username, connecting } = this.props;
-    let body, right;
+    const { username } = this.props;
+    let body;
 
-    if (username) {
-      if (connecting) {
-        body = (
-          <div style={{ display: 'flex' }}>
-            <div style={{ flex: 1 }} />
-            <div>Connecting.....</div>
-            <div style={{ flex: 1 }} />
-          </div>
-        );
-      } else {
-        body = <Room />;
-      }
-      right = (
-        <button name="logout" onClick={this.handleLogout}>
-          Logout
-        </button>
-      );
-    } else {
-      body = <Home />;
-    }
+    if (username) body = <Room logout={this.handleLogout} />;
+    else body = <Login />;
 
-    return (
-      <div>
-        <div>{right}</div>
-        {body}
-      </div>
-    );
+    return <div>{body}</div>;
   }
 }
 

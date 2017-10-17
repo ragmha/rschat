@@ -45,13 +45,13 @@ io.on('logout', ctx => {
   io.broadcast('users.logout', { username });
 });
 
-io.on('messsage', (ctx, { text }) => {
+io.on('message', (ctx, text) => {
   console.log(`[📣 Server] Message: ${text}`);
   const { username } = ctx.socket;
   const message = { id: messages.length, text, username };
   messages.push(message);
 
-  io.broadcast('messages.new', { message });
+  io.broadcast('message.new', { message });
 });
 
 app.listen(PORT, () =>

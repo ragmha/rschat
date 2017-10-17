@@ -20,12 +20,13 @@ const connect = () => {
   }).catch(error => console.error('[⛔ Connect Error]:', error));
 };
 
-//TODO: Implement disconnect
+// TODO: Implement disconnect
+// TODO: Implement unsubscriber for each sosckets
 const subscribe = socket =>
   eventChannel(emit => {
     socket.on('users.login', ({ username }) => emit(addUser({ username })));
     socket.on('users.logout', ({ username }) => emit(removeUser({ username })));
-    socket.on('messages.new', ({ message }) => emit(newMessage({ message })));
+    socket.on('message.new', ({ message }) => emit(newMessage({ message })));
     socket.on('disconnect', e => emit(END));
     return () => {};
   });
@@ -41,6 +42,7 @@ function* read(socket) {
 function* write(socket) {
   while (true) {
     const { message } = yield take(SEND_MESSAGE);
+
     socket.emit('message', message);
   }
 }
@@ -56,9 +58,10 @@ function* chatFlow() {
     const socket = yield call(connect);
     socket.emit('login', { username });
     const task = yield fork(handleIO, socket);
-    let action = yield take(LOGOUT);
+    console.log(task);
+    yield take(LOGOUT);
     yield cancel(...task);
-    socket.emit('logout', { username });
+    socket.emit('logout');
   }
 }
 
