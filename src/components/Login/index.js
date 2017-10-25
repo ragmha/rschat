@@ -8,9 +8,10 @@ import { login } from '../../actions';
 class Login extends Component {
   handleLogin = e => {
     e.preventDefault();
-    const username = document.getElementById('username').value;
-    if (username && 0 < username.length) {
+    const username = this.username.value;
+    if (username && username.length > 0) {
       this.props.dispatch(login({ username }));
+      this.username.value = '';
     }
   };
 
@@ -39,12 +40,10 @@ class Login extends Component {
             </Header>
             <Form size="large" onSubmit={this.handleLogin}>
               <Segment stacked>
-                <Form.Input
-                  id="username"
-                  fluid
-                  icon="user"
-                  iconPosition="left"
-                  placeholder="Username"
+                <input
+                  style={{ marginBottom: '10px' }}
+                  type="text"
+                  ref={val => (this.username = val)}
                 />
                 <Button color="teal" fluid size="large">
                   Enter
