@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { sendMessage } from '../../actions';
 import { Menu, Grid } from 'semantic-ui-react';
 
-import RoomList from './RoomList';
+import UserList from '../User/UserList';
 import Message from '../Message';
 
 const logo =
@@ -14,52 +13,42 @@ class Room extends Component {
 
   renderMenu() {
     const { activeItem } = this.state;
-    const { users, logout } = this.props;
+    const { logout } = this.props;
+
     return (
-      <div>
-        <Menu pointing secondary>
-          <Menu.Item>
-            <img src={logo} alt="app-logo" />
-          </Menu.Item>
+      <Menu pointing secondary>
+        <Menu.Item>
+          <img src={logo} alt="app-logo" />
+        </Menu.Item>
+        <Menu.Item name="home" active={activeItem === 'home'} />
+        <Menu.Menu position="right">
           <Menu.Item
-            name="home"
-            active={activeItem === 'home'}
-            onClick={this.handleItemClick}
+            name="logout"
+            active={activeItem === 'logout'}
+            onClick={logout}
           />
-          <Menu.Menu position="right">
-            <Menu.Item
-              name="logout"
-              active={activeItem === 'logout'}
-              onClick={logout}
-            />
-          </Menu.Menu>
-        </Menu>
-        <Grid>
-          <Grid.Column width={4}>
-            <Grid.Row>
-              <div className="userList">
-                {Object.keys(users).map((user, i) => (
-                  <RoomList user={user} key={i} index={i} />
-                ))}
-              </div>
-            </Grid.Row>
-          </Grid.Column>
-          <Grid.Column width={9}>
-            <Grid.Row>
-              <div className="message">
-                <Message />
-              </div>
-            </Grid.Row>
-          </Grid.Column>
-        </Grid>
-      </div>
+        </Menu.Menu>
+      </Menu>
     );
+  }
+
+  renderUsers() {
+    const { users } = this.props;
+    return Object.keys(users).map((user, i) => (
+      <UserList user={user} key={i} index={i} />
+    ));
   }
 
   render() {
     return (
       <div>
         <div>{this.renderMenu()}</div>
+        <Grid>
+          <Grid.Column width={5}>{this.renderUsers()}</Grid.Column>
+          <Grid.Column width={9}>
+            <Message />
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }

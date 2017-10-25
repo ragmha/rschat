@@ -1,0 +1,25 @@
+.menuHeader {
+  align-items: center;
+  background-color: #87ceeb;
+  border: 8px solid #ffffff;
+  display: flex;
+  font-size: 8vw;
+  margin: 0;
+  max-width: 100%; }
+  .menuHeader .menuHeader-title {
+    color: #f5f5f5;
+    margin-left: 10px;
+    text-transform: uppercase; }
+  .menuHeader .menuHeader-icon {
+    border-radius: 99px;
+    display: block;
+    height: 120px;
+    margin-left: 15px;
+    width: 120px; }
+
+@media only screen and (min-width: 40em) {
+  .menuHeader {
+    font-size: 5vw; }
+  .menuHeader-icon {
+    height: 80px;
+    width: 80px; } }

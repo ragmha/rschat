@@ -1,0 +1,37 @@
+$color-white: #ffffff;
+$color-darkcyan: #008b8b;
+$color-gray: #808080;
+
+.cardform {
+  max-width: 500px;
+
+  .cardform_about {
+    color: $color-gray;
+    font-size: 20px;
+    width: 42vw;
+  }
+
+  .cardform_label {
+    color: $color-darkcyan;
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .cardform_input {
+    background: transparent;
+    border: 1px solid $color-white;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 2px;
+    overflow: none;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+}

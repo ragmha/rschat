@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 
 import { login } from '../../actions';
 
+const Logo =
+  'https://cdn.codemate.com/wp-content/uploads/2016/02/C-icon-codemate.png';
+
 class Login extends Component {
   handleLogin = e => {
     e.preventDefault();
@@ -34,9 +37,9 @@ class Login extends Component {
         >
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="teal" textAlign="center" icon>
-              <Image src="https://cdn.codemate.com/wp-content/uploads/2016/02/C-icon-codemate.png" />
+              <Image src={Logo} />
               <br />
-              🐈 Project X Meow
+              🐈   Project X Meow
             </Header>
             <Form size="large" onSubmit={this.handleLogin}>
               <Segment stacked>

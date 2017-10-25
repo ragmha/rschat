@@ -1,0 +1,17 @@
+.container {
+  display: block;
+  margin: 50px;
+
+  .line {
+    background: black;
+    border-radius: 2px;
+    height: 5px;
+    margin: 6px;
+    width: 48px;
+  }
+
+  &:hover .line {
+    background: teal;
+    transition: 0.4s ease-in-out;
+  }
+}

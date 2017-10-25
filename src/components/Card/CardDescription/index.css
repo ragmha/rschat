@@ -1,0 +1,13 @@
+.card-description {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px; }
+  .card-description .card-description_header {
+    color: #87ceeb;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 44px;
+    text-align: center; }
+
+@media only screen and (min-width: 40em) {
+  .card-description .card-description_header {
+    text-align: left; } }

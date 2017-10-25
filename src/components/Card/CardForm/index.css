@@ -1,0 +1,23 @@
+.cardform {
+  max-width: 500px; }
+  .cardform .cardform_about {
+    color: #808080;
+    font-size: 20px;
+    width: 42vw; }
+  .cardform .cardform_label {
+    color: #008b8b;
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px; }
+  .cardform .cardform_input {
+    background: transparent;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 2px;
+    overflow: none;
+    padding: 10px;
+    resize: none;
+    width: 100%; }

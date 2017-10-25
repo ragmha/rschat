@@ -1,0 +1,23 @@
+$color-skyblue: #87ceeb;
+$font-family: 'Times New Roman', Times, serif;
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+
+  .card-description_header {
+    color: $color-skyblue;
+    font-family: $font-family;
+    font-size: 44px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .card-description {
+    .card-description_header {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$color-skyblue: #87ceeb;
+$color-black: #000000;
+$color-whitesmoke: #f5f5f5;
+$color-white: #ffffff;
+
+.menuHeader {
+  align-items: center;
+  background-color: $color-skyblue;
+  border: 8px solid $color-white;
+  display: flex;
+  font-size: 8vw;
+  margin: 0;
+  max-width: 100%;
+
+  .menuHeader-title {
+    color: $color-whitesmoke;
+    margin-left: 10px;
+    text-transform: uppercase;
+  }
+
+  .menuHeader-icon {
+    border-radius: 99px;
+    display: block;
+    height: 120px;
+    margin-left: 15px;
+    width: 120px;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .menuHeader {
+    font-size: 5vw;
+  }
+  .menuHeader-icon {
+    height: 80px;
+    width: 80px;
+  }
+}

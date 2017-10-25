@@ -1,0 +1,45 @@
+$color-black: #000000;
+$color-darkcyan: #008b8b;
+
+.card-item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  .card-item_image {
+    border-radius: 200px;
+    display: block;
+    height: 80px;
+    width: 80px;
+  }
+
+  .card-item_title {
+    color: $color-darkcyan;
+    font-size: 26px;
+  }
+  .card-item_value {
+    color: $color-black;
+    font-size: 26px;
+    font-weight: 900;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .card-item {
+    flex-direction: column;
+    .card-item_image {
+      padding: 10px;
+    }
+    .card-item_title {
+      font-size: 26px;
+      padding-left: 10px;
+      padding-top: 20px;
+      text-transform: uppercase;
+    }
+    .card-item_value {
+      font-size: 30px;
+      padding-top: 10px;
+    }
+  }
+}
