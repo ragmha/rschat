@@ -28,7 +28,16 @@ class Message extends Component {
         <Header as="h2" dividing>
           Messages
         </Header>
-        <div> {this.renderMessageList()} </div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            maxHeight: '60vh',
+            overflowY: 'scroll',
+          }}
+        >
+          {this.renderMessageList()}
+        </div>
         <Form reply>
           <Form.Field>
             <label>User Input</label>
