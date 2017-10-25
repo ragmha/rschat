@@ -33,6 +33,7 @@
     "jest": "20.0.4",
     "koa": "^2.3.0",
     "koa-socket": "^4.4.0",
+    "node-sass-chokidar": "^0.0.3",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
@@ -61,7 +62,9 @@
     "npm-run-all": "^4.1.1"
   },
   "scripts": {
-    "dev": "run-p start:server start:client",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "dev": "run-p start:server start:client watch-css",
     "start:client": "node scripts/start.js",
     "start:server": "NODE_ENV=development ./node_modules/.bin/babel-node src/server.js",
     "build": "node scripts/build.js",
