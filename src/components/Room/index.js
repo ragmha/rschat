@@ -6,12 +6,11 @@ import { Menu, Grid } from 'semantic-ui-react';
 import RoomList from './RoomList';
 import Message from '../Message';
 
+const logo =
+  'https://cdn.codemate.com/wp-content/uploads/2016/02/C-icon-codemate.png';
+
 class Room extends Component {
   state = { activeItem: 'home' };
-  handleMessage = () => {
-    const message = document.getElementById('room-message').value;
-    this.props.dispatch(sendMessage({ message }));
-  };
 
   renderMenu() {
     const { activeItem } = this.state;
@@ -20,7 +19,7 @@ class Room extends Component {
       <div>
         <Menu pointing secondary>
           <Menu.Item>
-            <img src="https://cdn.codemate.com/wp-content/uploads/2016/02/C-icon-codemate.png" />
+            <img src={logo} alt="app-logo" />
           </Menu.Item>
           <Menu.Item
             name="home"
