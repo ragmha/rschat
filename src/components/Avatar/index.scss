@@ -1,16 +1,16 @@
 .avatar {
-  border-radius: 200px;
+  border-radius: 19.53vw;
   display: block;
-  height: 180px;
-  margin: 10px auto;
-  padding: 5px;
-  width: 180px;
+  height: 17.58vw;
+  margin: 0.98vw auto;
+  padding: 0.49vw;
+  width: 17.58vw;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 640px) {
   .avatar {
-    height: 150px;
-    margin: 20px;
-    width: 150px;
+    height: 23.44vw;
+    margin: 3.13vw;
+    width: 23.44vw;
   }
 }
