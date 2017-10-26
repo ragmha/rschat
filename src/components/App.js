@@ -11,12 +11,13 @@ class App extends Component {
 
   render() {
     const { username } = this.props;
-    let body;
+    let main;
 
-    if (username) body = <Room logout={this.handleLogout} />;
-    else body = <Login />;
+    username
+      ? (main = <Room logout={this.handleLogout} />)
+      : (main = <Login />);
 
-    return <div>{body}</div>;
+    return <div>{main}</div>;
   }
 }
 
