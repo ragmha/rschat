@@ -9,16 +9,20 @@ import CardProfile from '../Card/CardProfile';
 import CardDescription from '../Card/CardDescription';
 import CardContent from '../Card/CardContent';
 
+import { logout } from '../../actions';
+
 class UserProfile extends Component {
   componentWillReceiveProps(nextProps) {
     this.props.history.push('/');
   }
 
+  handleLogout = () => this.props.dispatch(logout());
+
   render() {
     const { user } = this.props;
     return (
       <div className="main">
-        <RoomMenu />
+        <RoomMenu logout={this.handleLogout} />
         <div className="main-col-1">
           <CardProfile header={user} />
           <Gallery />

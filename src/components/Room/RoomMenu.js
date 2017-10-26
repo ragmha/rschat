@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Menu } from 'semantic-ui-react';
 
+import { logout } from '../../actions';
+
 const logo =
   'https://cdn.codemate.com/wp-content/uploads/2016/02/C-icon-codemate.png';
 
 class RoomMenu extends Component {
   state = { activeItem: 'home' };
 
+  handleLogout = () => this.props.dispatch(logout());
+
   render() {
     const { activeItem } = this.state;
-    const { logout } = this.props;
 
     return (
       <Menu pointing secondary>
@@ -22,7 +25,7 @@ class RoomMenu extends Component {
           <Menu.Item
             name="logout"
             active={activeItem === 'logout'}
-            onClick={logout}
+            onClick={this.handleLogout}
           />
         </Menu.Menu>
       </Menu>

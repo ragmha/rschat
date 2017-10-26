@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 import Login from './Login';
 import Room from './Room';
 
-import { logout } from '../actions';
-
 class App extends Component {
-  handleLogout = () => this.props.dispatch(logout());
-
   render() {
     const { username } = this.props;
     let main;
