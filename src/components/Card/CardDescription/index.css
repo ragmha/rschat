@@ -1,13 +1,13 @@
 .card-description {
   display: flex;
   flex-direction: column;
-  padding-left: 5px; }
+  padding-left: 0.49vw; }
   .card-description .card-description_header {
     color: #87ceeb;
     font-family: "Times New Roman", Times, serif;
-    font-size: 44px;
+    font-size: 4.3vw;
     text-align: center; }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 640px) {
   .card-description .card-description_header {
     text-align: left; } }

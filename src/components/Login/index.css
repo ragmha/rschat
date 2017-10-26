@@ -1,0 +1,22 @@
+body > div,
+body > div > div,
+body > div > div > div.login-form {
+  height: 100%; }
+
+.login-form {
+  margin: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.main {
+  height: 100%; }
+
+.column {
+  max-width: 450; }
+
+.footer {
+  text-align: center;
+  height: 100%;
+  vertical-align: middle; }

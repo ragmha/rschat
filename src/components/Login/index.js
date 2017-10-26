@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import { login } from '../../actions';
 
+import './index.css';
+
 const Logo =
   'https://cdn.codemate.com/wp-content/uploads/2016/02/C-icon-codemate.png';
 
@@ -21,25 +23,12 @@ class Login extends Component {
   render() {
     return (
       <div className="login-form">
-        <style>
-          {`
-      body > div,
-      body > div > div,
-      body > div > div > div.login-form {
-          height: 100%
-      }
-        `}
-        </style>
-        <Grid
-          textAlign="center"
-          style={{ height: '100%' }}
-          verticalAlign="middle"
-        >
-          <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid textAlign="center" className="main" verticalAlign="middle">
+          <Grid.Column className="column">
             <Header as="h2" color="teal" textAlign="center" icon>
               <Image src={Logo} />
               <br />
-              🐈   Project X Meow
+              🐈 Project X Meow
             </Header>
             <Form size="large" onSubmit={this.handleLogin}>
               <Segment stacked>
@@ -55,15 +44,7 @@ class Login extends Component {
             </Form>
           </Grid.Column>
         </Grid>
-        <footer
-          style={{
-            textAlign: 'center',
-            height: '100%',
-            verticalAlign: 'middle',
-          }}
-        >
-          © Meowify.Inc
-        </footer>
+        <footer className="footer">© Meowify.Inc</footer>
       </div>
     );
   }

@@ -3,11 +3,11 @@ $color-darkcyan: #008b8b;
 $color-gray: #808080;
 
 .cardform {
-  max-width: 500px;
+  max-width: 48.83vw;
 
   .cardform_about {
     color: $color-gray;
-    font-size: 20px;
+    font-size: 1vw;
     width: 42vw;
   }
 
@@ -15,23 +15,25 @@ $color-gray: #808080;
     color: $color-darkcyan;
     display: flex;
     flex-direction: column;
-    font-size: 28px;
+    font-size: 1.4vw;
     font-weight: 800;
-    margin-bottom: 12px;
+    margin-top: 1vw;
+    margin-bottom: 1.15vw;
   }
 
   .cardform_input {
     background: transparent;
-    border: 1px solid $color-white;
+    border: 0.098vw solid $color-white;
     box-sizing: border-box;
-    font-size: 20px;
-    margin-bottom: 2px;
+    font-size: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 0.195vw;
     overflow: none;
-    padding: 10px;
+    padding: 0.98vw;
     resize: none;
     width: 100%;
   }
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 640px) {
 }

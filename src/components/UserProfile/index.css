@@ -1,7 +1,7 @@
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 640px) {
   .main-col-1 {
     float: left;
-    margin: 2px;
+    margin: 0.31vw;
     width: 42%; }
   .main-col-2 {
     float: right;

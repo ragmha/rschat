@@ -1,11 +1,11 @@
 .card-content {
-  border-radius: 6px;
-  margin: 20px;
+  border-radius: 0.6vw;
+  margin: 1.95vw;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 640px) {
   .card-content {
-    border-radius: 2px;
+    border-radius: 0.31vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import MessageList from './MessageList';
 import { sendMessage } from '../../actions';
 
+import './index.css';
+
 class Message extends Component {
   handleMessage = e => {
     e.preventDefault();
@@ -28,18 +30,11 @@ class Message extends Component {
         <Header as="h2" dividing>
           Messages
         </Header>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            maxHeight: '60vh',
-            overflowY: 'scroll',
-          }}
-        >
+        <div className="messageList" style={{}}>
           {this.renderMessageList()}
         </div>
         <Form reply>
-          <Form.Field>
+          <Form.Field className="messageInput">
             <label>User Input</label>
             <input ref={txt => (this.message = txt)} />
           </Form.Field>

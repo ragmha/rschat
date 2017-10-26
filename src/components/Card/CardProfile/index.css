@@ -1,19 +1,19 @@
 .cardProfile {
-  margin: 40px; }
+  margin: 3.91vw; }
   .cardProfile .cardProfile-header {
     font-family: sans-serif;
     font-size: 2.5em;
     text-align: center; }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 640px) {
   .cardProfile {
-    border: solid 8px #ffffff;
-    margin: 10px;
-    width: 26vw; }
+    border: solid 1.25vw #ffffff;
+    margin: 1.56vw;
+    width: 24vw; }
     .cardProfile .cardProfile-header {
-      margin-bottom: 10px; }
+      margin-bottom: 1.56vw; }
     .cardProfile .avatar {
-      border-radius: 10px;
-      height: 28vh;
-      margin: 10px auto;
-      width: 22vw; } }
+      border-radius: 1.56vw;
+      height: 24vw;
+      margin: 1.56vw auto;
+      width: 24vw; } }

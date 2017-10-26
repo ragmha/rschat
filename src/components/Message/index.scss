@@ -1,0 +1,13 @@
+.messageList {
+  display: flex;
+  flex-direction: column;
+  max-height: 40vw;
+  overflow-y: scroll;
+  width: 60vw;
+  font-size: 1vw;
+}
+
+.messageInput {
+  font-size: 1vw;
+  width: 60vw;
+}
